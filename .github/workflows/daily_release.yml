@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Materialize persistent Day-01 dataset
+        run: python automation/bootstrap_day01_data.py
+
       - name: Test roadmap and schedule
         run: pytest -q
 
@@ -38,7 +41,7 @@ jobs:
           if [[ -n "$(git status --porcelain generated/)" ]]; then
             git config user.name "subsurface-release-bot"
             git config user.email "actions@users.noreply.github.com"
-            git add generated/
+            git add generated/ data/day_01/volve_15_9_F_1B.csv
             git commit -m "chore: autonomous daily subsurface release"
             git push
           else
