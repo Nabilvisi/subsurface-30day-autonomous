@@ -30,10 +30,15 @@ def _metric_row(items: list[tuple[str, str, str | None]]) -> None:
 
 def _use_data(uploaded: pd.DataFrame | None, benchmark: pd.DataFrame, required: list[str]) -> pd.DataFrame:
     if uploaded is not None and all(c in uploaded.columns for c in required):
-        st.success("Using uploaded data for this lab.")
-        return uploaded.copy()
+        label = uploaded.attrs.get("source_label", "external dataset")
+        st.success(f"Using {label} for this lab.")
+        result = uploaded.copy()
+        result.attrs.update(uploaded.attrs)
+        return result
     if uploaded is not None:
-        st.info("Uploaded data does not contain the required columns for this day; benchmark data is being used.")
+        label = uploaded.attrs.get("source_label", "external dataset")
+        missing = [c for c in required if c not in uploaded.columns]
+        st.info(f"{label} is missing required columns {missing}; benchmark data is being used.")
     return benchmark.copy()
 
 
