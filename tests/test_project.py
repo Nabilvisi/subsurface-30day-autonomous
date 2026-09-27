@@ -20,3 +20,13 @@ def test_schedule_boundaries():
     assert schedule.day_for(datetime(2026, 9, 27, 23, 0, tzinfo=tz)) == 0
     assert schedule.day_for(datetime(2026, 9, 28, 0, 5, tzinfo=tz)) == 1
     assert schedule.day_for(datetime(2026, 10, 27, 12, 0, tzinfo=tz)) == 30
+
+
+def test_day01_dataset_registry():
+    from subsurface_lab.data import load_manifest
+
+    manifest = load_manifest(ROOT / "data" / "manifest.json")
+    day1 = manifest["01"]
+    assert day1["well"] == "15/9-F-1 B"
+    assert set(["DEPTH", "GR", "RHOB", "NPHI", "RT"]).issubset(day1["required_columns"])
+    assert day1["curve_mapping"]["RACEHM"] == "RT"
