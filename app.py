@@ -9,6 +9,7 @@ import pandas as pd
 import streamlit as st
 
 from subsurface_lab.content import linkedin_post
+from subsurface_lab.data import load_day_dataset
 from subsurface_lab.labs import render_lab
 from subsurface_lab.roadmap import load_roadmap
 from subsurface_lab.schedule import load_schedule
@@ -51,11 +52,20 @@ with st.sidebar:
 
     st.divider()
     st.subheader("Data")
-    if st.button("Load Benchmark / Demo Data", type="primary", use_container_width=True):
-        st.session_state["data_mode"] = "benchmark"
-        st.session_state.pop("uploaded_df", None)
+    if "data_mode" not in st.session_state:
+        st.session_state["data_mode"] = "auto"
 
-    upload = st.file_uploader("Optional field data", type=["csv", "las"], help="CSV is read directly. LAS requires lasio and is converted to a DataFrame.")
+    c_auto, c_demo = st.columns(2)
+    with c_auto:
+        if st.button("Use Auto Data", type="primary", use_container_width=True):
+            st.session_state["data_mode"] = "auto"
+            st.session_state.pop("uploaded_df", None)
+    with c_demo:
+        if st.button("Use Demo Data", use_container_width=True):
+            st.session_state["data_mode"] = "benchmark"
+            st.session_state.pop("uploaded_df", None)
+
+    upload = st.file_uploader("Optional field data", type=["csv", "las"], help="Uploaded CSV/LAS overrides the automatic dataset for this session.")
     if upload is not None:
         try:
             if upload.name.lower().endswith(".csv"):
@@ -108,8 +118,31 @@ with physics_tab:
     st.info("The live calculator below is an educational engineering implementation. Validate correlations, units, PVT assumptions, and calibration against field procedures before operational use.")
 
 with app_tab:
-    uploaded_df = st.session_state.get("uploaded_df") if st.session_state.get("data_mode") == "uploaded" else None
-    render_lab(selected_day, uploaded_df)
+    data_mode = st.session_state.get("data_mode", "auto")
+    external_df = None
+
+    if data_mode == "uploaded":
+        external_df = st.session_state.get("uploaded_df")
+        if external_df is not None:
+            external_df.attrs["source_label"] = "user-uploaded field data"
+            external_df.attrs["source_kind"] = "upload"
+        st.caption("Dataset mode: user upload")
+    elif data_mode == "benchmark":
+        st.caption("Dataset mode: deterministic built-in benchmark")
+    else:
+        external_df, dataset_meta = load_day_dataset(selected_day, allow_remote=True)
+        if external_df is not None:
+            if dataset_meta.get("status") == "repository":
+                st.success(f"Automatic dataset: {dataset_meta.get('label')} · {dataset_meta.get('rows', 0):,} rows · repository copy")
+            else:
+                st.success(f"Automatic dataset: {dataset_meta.get('label')} · {dataset_meta.get('rows', 0):,} rows · verified remote source")
+                st.caption("The repository copy has not been materialized yet; the app is using the verified source directly and caching it for this process.")
+        else:
+            st.warning("Automatic real dataset unavailable. The lab has fallen back to its deterministic synthetic benchmark.")
+            if dataset_meta.get("reason"):
+                st.caption(dataset_meta["reason"])
+
+    render_lab(selected_day, external_df)
 
 with social_tab:
     st.markdown("### Ready-to-publish LinkedIn post")
