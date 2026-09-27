@@ -1,0 +1,9 @@
+{
+  "project_name": "30-Day Autonomous Subsurface Engineering Lab",
+  "start_date": "2026-09-28",
+  "timezone": "Asia/Jakarta",
+  "duration_days": 30,
+  "release_hour_local": 0,
+  "release_minute_local": 5,
+  "allow_preview_future_days": true
+}
