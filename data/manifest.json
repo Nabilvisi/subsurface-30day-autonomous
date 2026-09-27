@@ -1,0 +1,17 @@
+{
+  "01": {
+    "label": "Equinor Volve 15/9-F-1B petrophysical well logs",
+    "local_path": "data/day_01/volve_15_9_F_1B.csv",
+    "remote_url": "https://raw.githubusercontent.com/andymcdgeo/spwla_volve/main/15_9-F-1B/WLC_PETRO_COMPUTED_INPUT_1.LAS",
+    "source_url": "https://www.equinor.com/energy/volve-data-sharing",
+    "mirror_url": "https://github.com/andymcdgeo/spwla_volve/tree/main/15_9-F-1B",
+    "well": "15/9-F-1 B",
+    "field": "Volve",
+    "required_columns": ["DEPTH", "GR", "RHOB", "NPHI", "RT"],
+    "export_columns": ["DEPTH", "GR", "RHOB", "NPHI", "RT", "CALI"],
+    "curve_mapping": {
+      "RACEHM": "RT"
+    },
+    "notes": "RACEHM is used as the deep-resistivity proxy RT for the Day-01 saturation models."
+  }
+}
