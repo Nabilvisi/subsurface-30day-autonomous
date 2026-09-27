@@ -38,7 +38,7 @@ jobs:
 
       - name: Commit release artifact
         run: |
-          if [[ -n "$(git status --porcelain generated/)" ]]; then
+          if [[ -n "$(git status --porcelain generated/ data/day_01/volve_15_9_F_1B.csv)" ]]; then
             git config user.name "subsurface-release-bot"
             git config user.email "actions@users.noreply.github.com"
             git add generated/ data/day_01/volve_15_9_F_1B.csv
