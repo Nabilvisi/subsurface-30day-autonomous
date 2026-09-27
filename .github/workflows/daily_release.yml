@@ -1,0 +1,46 @@
+name: Daily Subsurface Release
+
+on:
+  schedule:
+    - cron: "5 0 * * *"
+      timezone: "Asia/Jakarta"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Test roadmap and schedule
+        run: pytest -q
+
+      - name: Run security gate
+        run: python security_gate.py app.py subsurface_lab/labs.py automation/run_daily.py
+
+      - name: Materialize today's release
+        run: python automation/run_daily.py
+
+      - name: Commit release artifact
+        run: |
+          if [[ -n "$(git status --porcelain generated/)" ]]; then
+            git config user.name "subsurface-release-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add generated/
+            git commit -m "chore: autonomous daily subsurface release"
+            git push
+          else
+            echo "No new release artifact to commit."
+          fi
