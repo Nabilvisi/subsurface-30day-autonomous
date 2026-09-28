@@ -1,0 +1,12 @@
+{
+  "day": 2,
+  "title": "Interactive Mineral Triaxial Inversion & Matrix Deconvolver",
+  "pillar": "Pillar 1: Petrophysics & Formation Evaluation (Days 01\u201308)",
+  "dataset": "USGS Digital Spectral & Well Log Repository / Kansas Geological Survey.",
+  "scheduled_release": "2026-09-29T00:05:00+07:00",
+  "materialized_at_utc": "2026-09-28T22:30:47.098240+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 02",
+  "source_of_truth": "Project.md"
+}
