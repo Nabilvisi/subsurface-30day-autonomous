@@ -14,6 +14,11 @@ def test_roadmap_has_30_days():
     assert all(roadmap[d].title for d in roadmap)
 
 
+def test_day30_dataset_excludes_following_project_sections():
+    roadmap = load_roadmap(ROOT / "Project.md")
+    assert roadmap[30].dataset == "Equinor Volve Field Integrated Asset Consolidated Dataset."
+
+
 def test_schedule_boundaries():
     schedule, _ = load_schedule(ROOT / "project_config.json")
     tz = ZoneInfo(schedule.timezone)

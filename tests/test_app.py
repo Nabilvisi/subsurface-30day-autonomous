@@ -20,3 +20,7 @@ def test_requested_day_renders_with_simplified_tabs(day):
     } for tab in app.tabs)
     assert not app.code
     assert app.metric
+    if day == 30:
+        caption = next(c.value for c in app.caption if "Reference dataset:" in c.value)
+        assert caption.endswith("Equinor Volve Field Integrated Asset Consolidated Dataset.")
+        assert "security_gate.py" not in caption

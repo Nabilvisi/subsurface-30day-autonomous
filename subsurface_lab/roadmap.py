@@ -40,7 +40,7 @@ def load_roadmap(project_md: str | Path) -> dict[int, DaySpec]:
         title = m.group(2).strip()
         block: list[str] = []
         i += 1
-        while i < len(lines) and not lines[i].startswith("#### Day ") and not lines[i].startswith("### Pillar "):
+        while i < len(lines) and not re.match(r"^#{1,4}\s|^---\s*$", lines[i]):
             block.append(lines[i])
             i += 1
         joined = "\n".join(block)
