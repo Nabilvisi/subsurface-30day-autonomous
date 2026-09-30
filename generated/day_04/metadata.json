@@ -1,0 +1,12 @@
+{
+  "day": 4,
+  "title": "Continuous NMR $T_2$ Spectral Deconvolution & Fluid Partitioner",
+  "pillar": "Pillar 1: Petrophysics & Formation Evaluation (Days 01\u201308)",
+  "dataset": "SPWLA Open NMR Benchmark / Volve Core-Log Calibration Library.",
+  "scheduled_release": "2026-10-01T00:05:00+07:00",
+  "materialized_at_utc": "2026-09-30T21:24:30.066245+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 04",
+  "source_of_truth": "Project.md"
+}
