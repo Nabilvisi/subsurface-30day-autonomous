@@ -3,12 +3,10 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
-import json
 
 import pandas as pd
 import streamlit as st
 
-from subsurface_lab.content import linkedin_post
 from subsurface_lab.data import load_day_dataset
 from subsurface_lab.labs import render_lab
 from subsurface_lab.roadmap import load_roadmap
@@ -98,12 +96,9 @@ elif selected_day > auto_day and mode == "Preview / browse":
 st.subheader(f"Day {selected_day:02d} — {spec.title}")
 st.caption(f"{spec.pillar} · Reference dataset: {spec.dataset}")
 
-problem_tab, physics_tab, app_tab, social_tab, ops_tab = st.tabs([
+problem_tab, app_tab = st.tabs([
     "1 · Technical Problem",
-    "2 · Physics & Math",
     "3 · Interactive Application",
-    "4 · LinkedIn Output",
-    "Automation / Ops",
 ])
 
 with problem_tab:
@@ -111,11 +106,6 @@ with problem_tab:
     st.write(spec.problem)
     st.markdown("### Intended interactivity")
     st.write(spec.ui)
-
-with physics_tab:
-    st.markdown("### First-principles formulation")
-    st.write(spec.physics)
-    st.info("The live calculator below is an educational engineering implementation. Validate correlations, units, PVT assumptions, and calibration against field procedures before operational use.")
 
 with app_tab:
     data_mode = st.session_state.get("data_mode", "auto")
@@ -143,27 +133,3 @@ with app_tab:
                 st.caption(dataset_meta["reason"])
 
     render_lab(selected_day, external_df)
-
-with social_tab:
-    st.markdown("### Ready-to-publish LinkedIn post")
-    post = linkedin_post(spec)
-    st.text_area("Post", value=post, height=330)
-    st.download_button("Download post (.txt)", data=post, file_name=f"day_{selected_day:02d}_linkedin.txt", mime="text/plain")
-
-with ops_tab:
-    st.markdown("### Autonomous release mechanism")
-    st.write(
-        "The app derives the live day from `project_config.json`. A GitHub Actions cron job runs daily, materializes the day's report under `generated/`, runs tests/security checks, and commits the release artifact. Streamlit then reflects the new live day from the same repository."
-    )
-    manifest_path = ROOT / "generated" / f"day_{selected_day:02d}" / "metadata.json"
-    if manifest_path.exists():
-        st.success("Daily release artifact exists.")
-        st.json(json.loads(manifest_path.read_text(encoding="utf-8")))
-    else:
-        st.info("No committed release artifact for this day yet. The interactive lab is still available in preview mode.")
-    st.code(
-        "python automation/run_daily.py --force-day 1\n"
-        "streamlit run app.py\n"
-        "python security_gate.py app.py",
-        language="bash",
-    )

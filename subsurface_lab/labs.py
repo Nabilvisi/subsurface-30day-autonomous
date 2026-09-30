@@ -8,6 +8,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from plotly.subplots import make_subplots
+from scipy.integrate import trapezoid
 from scipy.optimize import curve_fit, minimize, nnls
 from scipy.special import exp1
 from sklearn.cluster import DBSCAN, KMeans
@@ -206,7 +207,7 @@ def _render_day_03(uploaded: pd.DataFrame | None) -> None:
 def _render_day_04(uploaded: pd.DataFrame | None) -> None:
     t2 = np.logspace(-1, np.log10(3000), 128)
     spectrum = 0.36*np.exp(-((np.log10(t2)-0.25)/0.33)**2) + 0.64*np.exp(-((np.log10(t2)-1.8)/0.45)**2)
-    spectrum /= np.trapz(spectrum, np.log(t2))
+    spectrum /= trapezoid(spectrum, np.log(t2))
     with st.sidebar:
         cutoff = st.slider("T2 cutoff (ms)", 1.0, 250.0, 33.0, 1.0)
         phi = st.slider("NMR porosity", 0.05, 0.35, 0.22, 0.01)
@@ -214,7 +215,7 @@ def _render_day_04(uploaded: pd.DataFrame | None) -> None:
         a = st.slider("Porosity exponent a", 2.0, 6.0, 4.0, 0.1)
         b = st.slider("FFI/BVI exponent b", 1.0, 4.0, 2.0, 0.1)
     left = t2 <= cutoff
-    bvi = np.trapz(spectrum[left], np.log(t2[left])) if left.sum()>1 else 0.0
+    bvi = trapezoid(spectrum[left], np.log(t2[left])) if left.sum()>1 else 0.0
     ffi = max(1-bvi, 0)
     k = c*(phi**a)*(ffi/max(bvi,0.01))**b
     _metric_row([("BVI", f"{bvi:.2f}", None), ("FFI", f"{ffi:.2f}", None), ("Coates permeability", f"{k:.1f} mD", None)])
@@ -377,8 +378,8 @@ def _render_day_09(uploaded: pd.DataFrame | None) -> None:
         popt=[fit.RATE.iloc[0],.05,1.0]
     fc_t=np.arange(0,361)
     qf=_arps_modified(fc_t,*popt,terminal)
-    eur=np.trapz(qf,fc_t*30.4375)/1000
-    hist_cum=np.trapz(fit.RATE,fit.MONTH*30.4375)/1000
+    eur=trapezoid(qf,fc_t*30.4375)/1000
+    hist_cum=trapezoid(fit.RATE,fit.MONTH*30.4375)/1000
     revenue=eur*1000*oil_price/1e6
     _metric_row([("qi fit",f"{popt[0]:.0f} bopd",None),("b-factor",f"{popt[2]:.2f}",None),("30-y EUR",f"{eur:.1f} Mbbl",f"+{eur-hist_cum:.1f} vs hist"),("Gross revenue",f"${revenue:.1f} MM",None)])
     fig=go.Figure()
