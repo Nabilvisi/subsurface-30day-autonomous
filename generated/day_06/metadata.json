@@ -1,0 +1,12 @@
+{
+  "day": 6,
+  "title": "Capillary Pressure ($P_c$) & Dynamic Saturation-Height Modeler",
+  "pillar": "Pillar 1: Petrophysics & Formation Evaluation (Days 01\u201308)",
+  "dataset": "Equinor Volve Special Core Analysis (SCAL) Benchmark.",
+  "scheduled_release": "2026-10-03T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-02T21:18:03.488919+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 06",
+  "source_of_truth": "Project.md"
+}
