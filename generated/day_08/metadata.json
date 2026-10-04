@@ -1,0 +1,12 @@
+{
+  "day": 8,
+  "title": "Interactive Petrophysical Cutoffs & Pay-Summary Sandbox",
+  "pillar": "Pillar 1: Petrophysics & Formation Evaluation (Days 01\u201308)",
+  "dataset": "Equinor Volve Well `15/9-F-12` Clean Formation Interval.",
+  "scheduled_release": "2026-10-05T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-04T20:06:07.111914+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 08",
+  "source_of_truth": "Project.md"
+}
