@@ -1,0 +1,12 @@
+{
+  "day": 9,
+  "title": "Multi-Segment Decline Curve Analysis (DCA) & EUR Forecaster",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "EIA Eagle Ford Public Production Time-Series Data.",
+  "scheduled_release": "2026-10-06T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-05T23:08:18.004866+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 09",
+  "source_of_truth": "Project.md"
+}
