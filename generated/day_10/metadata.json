@@ -1,0 +1,12 @@
+{
+  "day": 10,
+  "title": "Havlena-Odeh Dynamic Material Balance Diagnostic Engine",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "Equinor Volve Field Static Pressure & Cumulative Production Reports.",
+  "scheduled_release": "2026-10-07T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-06T21:36:07.045613+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 10",
+  "source_of_truth": "Project.md"
+}
