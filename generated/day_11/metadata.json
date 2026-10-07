@@ -1,0 +1,12 @@
+{
+  "day": 11,
+  "title": "Pressure Transient Analysis (PTA) Bourdet Derivative Diagnostic",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "SPE Open Well Test & Pressure Buildup Case Library.",
+  "scheduled_release": "2026-10-08T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-07T21:57:17.272827+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 11",
+  "source_of_truth": "Project.md"
+}
