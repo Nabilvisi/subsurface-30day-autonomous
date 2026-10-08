@@ -1,0 +1,12 @@
+{
+  "day": 12,
+  "title": "Peng-Robinson Compositional PVT & Dynamic Phase Envelope",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "Standing-Katz / Glas\u00f8 Open Thermodynamic Laboratory Benchmarks.",
+  "scheduled_release": "2026-10-09T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-08T22:01:36.989779+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 12",
+  "source_of_truth": "Project.md"
+}
