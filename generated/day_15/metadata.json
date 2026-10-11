@@ -1,0 +1,12 @@
+{
+  "day": 15,
+  "title": "Multi-Well Pulse Testing & Interference Spatial Pressure Depletion",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "Synthetic Multi-Well Inter-Well Pressure Interference Suite.",
+  "scheduled_release": "2026-10-12T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-11T20:56:00.728587+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 15",
+  "source_of_truth": "Project.md"
+}
