@@ -1,0 +1,12 @@
+{
+  "day": 16,
+  "title": "Gas-Condensate Well Deliverability & Liquid Loading Estimator",
+  "pillar": "Pillar 2: Reservoir Engineering & Dynamics (Days 09\u201316)",
+  "dataset": "Offshore Gas-Condensate Production Test Repository.",
+  "scheduled_release": "2026-10-13T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-12T23:35:48.603292+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 16",
+  "source_of_truth": "Project.md"
+}
