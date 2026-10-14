@@ -1,0 +1,12 @@
+{
+  "day": 18,
+  "title": "3D Directional Wellbore Trajectory & Anti-Collision Ellipse Radar",
+  "pillar": "Pillar 3: Drilling & Well Integrity Engineering (Days 17\u201323)",
+  "dataset": "Equinor Volve Directional Wellbore Surveys (All Wells).",
+  "scheduled_release": "2026-10-15T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-14T20:37:57.670328+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 18",
+  "source_of_truth": "Project.md"
+}
