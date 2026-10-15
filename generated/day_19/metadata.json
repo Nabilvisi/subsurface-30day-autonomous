@@ -1,0 +1,12 @@
+{
+  "day": 19,
+  "title": "Dynamic Wellbore Hydraulics & Surge/Swab Pressure Window Solver",
+  "pillar": "Pillar 3: Drilling & Well Integrity Engineering (Days 17\u201323)",
+  "dataset": "SPE Drilling Hydraulics & Rheology Benchmark Tables.",
+  "scheduled_release": "2026-10-16T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-15T20:17:52.163910+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 19",
+  "source_of_truth": "Project.md"
+}
