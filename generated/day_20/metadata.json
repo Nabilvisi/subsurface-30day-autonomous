@@ -1,0 +1,12 @@
+{
+  "day": 20,
+  "title": "Soft-String Torque & Drag (T&D) Tension & Buckling Simulator",
+  "pillar": "Pillar 3: Drilling & Well Integrity Engineering (Days 17\u201323)",
+  "dataset": "Real High-Angle Directional Wellbore Drillstring Specs (SPE Compendium).",
+  "scheduled_release": "2026-10-17T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-16T19:54:57.276482+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 20",
+  "source_of_truth": "Project.md"
+}
