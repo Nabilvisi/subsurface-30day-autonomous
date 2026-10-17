@@ -1,0 +1,12 @@
+{
+  "day": 21,
+  "title": "Real-Time Kick Detection & Driller\u2019s Method Well-Kill Simulator",
+  "pillar": "Pillar 3: Drilling & Well Integrity Engineering (Days 17\u201323)",
+  "dataset": "Managed Pressure Drilling (MPD) Influx Simulation Suite.",
+  "scheduled_release": "2026-10-18T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-17T19:17:09.092197+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 21",
+  "source_of_truth": "Project.md"
+}
