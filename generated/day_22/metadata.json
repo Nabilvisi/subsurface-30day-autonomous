@@ -1,0 +1,12 @@
+{
+  "day": 22,
+  "title": "Time-Series Stuck Pipe Early Warning Anomaly Radar",
+  "pillar": "Pillar 3: Drilling & Well Integrity Engineering (Days 17\u201323)",
+  "dataset": "Equinor Volve Real-Time Drilling WITSML Timeseries.",
+  "scheduled_release": "2026-10-19T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-18T19:23:57.816058+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 22",
+  "source_of_truth": "Project.md"
+}
