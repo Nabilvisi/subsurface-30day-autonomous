@@ -1,0 +1,12 @@
+{
+  "day": 24,
+  "title": "Dynamic Integrated Nodal Analysis Engine (Inflow vs. Outflow)",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "Stanford Open Petroleum Engineering Toolbox / North Sea Production Database.",
+  "scheduled_release": "2026-10-21T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-20T20:30:21.110705+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 24",
+  "source_of_truth": "Project.md"
+}
