@@ -1,0 +1,12 @@
+{
+  "day": 25,
+  "title": "Electrical Submersible Pump (ESP) Hydraulic Viscosity Derating Sandbox",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "SPE Artificial Lift ESP Public Performance Testing Data.",
+  "scheduled_release": "2026-10-22T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-21T20:34:22.131981+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 25",
+  "source_of_truth": "Project.md"
+}
