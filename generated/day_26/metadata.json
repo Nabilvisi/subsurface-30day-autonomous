@@ -1,0 +1,12 @@
+{
+  "day": 26,
+  "title": "Constrained Field-Scale Gas Lift Allocation Optimizer",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "Equinor Volve Field Gas Lift Production Well Tests.",
+  "scheduled_release": "2026-10-23T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-22T20:31:27.958099+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 26",
+  "source_of_truth": "Project.md"
+}
