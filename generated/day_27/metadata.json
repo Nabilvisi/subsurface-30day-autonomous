@@ -1,0 +1,12 @@
+{
+  "day": 27,
+  "title": "Multiphase Choke Flow Regimes & API RP 14E Erosional Velocity Alarms",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "Offshore Wellhead Manifold Testing Records (SPE Surface Operations).",
+  "scheduled_release": "2026-10-24T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-23T20:22:00.201103+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 27",
+  "source_of_truth": "Project.md"
+}
