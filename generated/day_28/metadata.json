@@ -1,0 +1,12 @@
+{
+  "day": 28,
+  "title": "Horizontal Well Inflow Control Device (ICD) Equalization Profiler",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "SPE Horizontal Completion & ICD Benchmark Suite.",
+  "scheduled_release": "2026-10-25T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-24T19:26:11.307391+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 28",
+  "source_of_truth": "Project.md"
+}
