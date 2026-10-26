@@ -1,0 +1,12 @@
+{
+  "day": 30,
+  "title": "Capstone: Integrated Asset Production Digital Twin",
+  "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
+  "dataset": "Equinor Volve Field Integrated Asset Consolidated Dataset.",
+  "scheduled_release": "2026-10-27T00:05:00+07:00",
+  "materialized_at_utc": "2026-10-26T21:36:15.939184+00:00",
+  "status": "released",
+  "streamlit_entrypoint": "app.py",
+  "navigation_hint": "Preview / browse \u2192 Day 30",
+  "source_of_truth": "Project.md"
+}
