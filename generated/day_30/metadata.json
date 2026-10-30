@@ -4,7 +4,7 @@
   "pillar": "Pillar 4: Production Systems & Artificial Lift (Days 24\u201330)",
   "dataset": "Equinor Volve Field Integrated Asset Consolidated Dataset.",
   "scheduled_release": "2026-10-27T00:05:00+07:00",
-  "materialized_at_utc": "2026-10-29T21:44:56.665945+00:00",
+  "materialized_at_utc": "2026-10-30T21:26:36.124894+00:00",
   "status": "released",
   "streamlit_entrypoint": "app.py",
   "navigation_hint": "Preview / browse \u2192 Day 30",
